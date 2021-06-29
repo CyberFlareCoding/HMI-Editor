@@ -18,6 +18,7 @@ var hideCount1 = 0;
     }
 
     function ToggleCollapse(){
+        MData=[], FileMData=[];
         collapse = !collapse;
         console.log("toggle collapse: " + collapse)
         count = 0;
@@ -56,6 +57,7 @@ function GrabData(input, fileName) {
     FileMData.push(fileName.substring(0, fileName.indexOf(".txt")));
     MData.push([...temp]);
     n = document.getElementById("fileListp");
+    n.innerHTML = "";
     n.innerHTML = "-" + FileMData.join("<br>-");
     n.style.border = "3px solid #808080";
 }
@@ -87,7 +89,7 @@ overviewFile = (count, fileName) => {
         return "";
     }
     if(!collapse){
-return `# ${count},${fileName},,${(!(MData[count][130].includes(".")||MData[count][130].includes("-")))? backupPartNumber(count):MData[count][130]},,${(MData[count][5]=="Ja")?`DMC1: ${(MData[count][7]=="Ja")?`${MData[count][9]}`:"N"}`:"No"},,${(MData[count][69]=="Nein")?"               No":`DMC1: ${(MData[count][71]=="Nein")? "N":`${MData[count][73]}`}`},,${(MData[count][26]=="Ja")?`ID1: ${(MData[count][32]=="Ja")?`${MData[count][34]}`:"N"}`:"No"},${(MData[count][28]=="Ja")?`${MData[count][30]}`: "No"},${MData[count][112]},${MData[count][117]},
+return `#${count+1},${fileName},,${(!(MData[count][130].includes(".")||MData[count][130].includes("-")))? backupPartNumber(count):MData[count][130]},,${(MData[count][5]=="Ja")?`DMC1: ${(MData[count][7]=="Ja")?`${MData[count][9]}`:"N"}`:"No"},,${(MData[count][69]=="Nein")?"No":`DMC1: ${(MData[count][71]=="Nein")? "N":`${MData[count][73]}`}`},,${(MData[count][26]=="Ja")?`ID1: ${(MData[count][32]=="Ja")?`${MData[count][34]}`:"N"}`:"No"},${(MData[count][28]=="Ja")?`${MData[count][30]}`: "No"},${MData[count][112]},${MData[count][117]},
 ,,,,,${(MData[count][5]=="Ja")?`DMC2: ${(MData[count][13]=="Ja")?`${MData[count][15]}`:"N"}`:""},,${(MData[count][69]=="Nein")?"":`DMC2: ${(MData[count][75]=="Nein")? "N":`${MData[count][77]}`}`},,${(MData[count][26]=="Ja")?`ID2: ${(MData[count][36]=="Ja")?`${MData[count][38]}`:"N"}`:""},,,
 ,,,,,${(MData[count][5]=="Ja")?`DMC3: ${(MData[count][19]=="Ja")?`${MData[count][21]}`:"N"}`:""},,${(MData[count][69]=="Nein")?"":`DMC3: ${(MData[count][79]=="Nein")? "N":`${MData[count][81]}`}`},,${(MData[count][26]=="Ja")?`ID3: ${(MData[count][40]=="Ja")?`${MData[count][42]}`:"N"}`:""},,,
 ,,,,,,,${(MData[count][69]=="Nein")?"":`DMC4: ${(MData[count][83]=="Nein")? "N":`${MData[count][85]}`}`},,${(MData[count][26]=="Ja")?`ID4: ${(MData[count][44]=="Ja")?`${MData[count][46]}`:"N"}`:""},,,
@@ -98,7 +100,7 @@ return `# ${count},${fileName},,${(!(MData[count][130].includes(".")||MData[coun
 ,,,,,,,${(MData[count][69]=="Nein")?"":`DMC9: ${(MData[count][103]=="Nein")? "N":`${MData[count][105]}`}`},,${(MData[count][26]=="Ja")?`ID9: ${(MData[count][64]=="Ja")?`${MData[count][66]}`:"N"}`:""},,,
 ,,,,,,,${(MData[count][69]=="Nein")?"":`DMC10: ${(MData[count][107]=="Nein")? "N":`${MData[count][109]}`}`},,,,,\n`;
 }else{
-return `# ${count},${fileName},,${(!(MData[count][130].includes(".")||MData[count][130].includes("-")))? backupPartNumber(count):MData[count][130]},,${(MData[count][5]=="Ja")?`DMC1: ${(MData[count][7]=="Ja")?`${MData[count][9]}`:"N"}`:"No"},,${(MData[count][69]=="Nein")?"               No":`DMC1: ${(MData[count][71]=="Nein")? "N":`${MData[count][73]}`}`},,${(MData[count][26]=="Ja")?`ID1: ${(MData[count][32]=="Ja")?`${MData[count][34]}`:"N"}`:"No"},${(MData[count][28]=="Ja")?`${MData[count][30]}`: "No"},${MData[count][112]},${MData[count][117]},
+return `# ${count},${fileName},,${(!(MData[count][130].includes(".")||MData[count][130].includes("-")))? backupPartNumber(count):MData[count][130]},,${(MData[count][5]=="Ja")?`DMC1: ${(MData[count][7]=="Ja")?`${MData[count][9]}`:"N"}`:"No"},,${(MData[count][69]=="Nein")?"No":`DMC1: ${(MData[count][71]=="Nein")? "N":`${MData[count][73]}`}`},,${(MData[count][26]=="Ja")?`ID1: ${(MData[count][32]=="Ja")?`${MData[count][34]}`:"N"}`:"No"},${(MData[count][28]=="Ja")?`${MData[count][30]}`: "No"},${MData[count][112]},${MData[count][117]},
 ,,,,,${(MData[count][5]=="Ja")?`DMC2: ${(MData[count][13]=="Ja")?`${MData[count][15]}`:"N"}`:""},,${(MData[count][69]=="Nein")?"":`DMC2: ${(MData[count][75]=="Nein")? "N":`${MData[count][77]}`}`},,${(MData[count][26]=="Ja")?`ID2: ${(MData[count][36]=="Ja")?`${MData[count][38]}`:"N"}`:""},,,
 ,,,,,${(MData[count][5]=="Ja")?`DMC3: ${(MData[count][19]=="Ja")?`${MData[count][21]}`:"N"}`:""},,${(MData[count][69]=="Nein")?"":`DMC3: ${(MData[count][79]=="Nein")? "N":`${MData[count][81]}`}`},,${(MData[count][26]=="Ja")?`ID3: ${(MData[count][40]=="Ja")?`${MData[count][42]}`:"N"}`:""},,,\n${(MData[count][69]=="Nein" && MData[count][26]=="Nein")? "":`,,,,,,,${(MData[count][69]=="Nein")?"":`DMC4: ${(MData[count][83]=="Nein")? "N":`${MData[count][85]}`}`},,${(MData[count][26]=="Ja")?`ID4: ${(MData[count][44]=="Ja")?`${MData[count][46]}`:"N"}`:""},,,\n`}${(MData[count][69]=="Nein" && MData[count][26]=="Nein")? "":`,,,,,,,${(MData[count][69]=="Nein")?"":`DMC5: ${(MData[count][87]=="Nein")? "N":`${MData[count][89]}`}`},,${(MData[count][26]=="Ja")?`ID5: ${(MData[count][48]=="Ja")?`${MData[count][50]}`:"N"}`:""},,,\n`}${(MData[count][69]=="Nein" && MData[count][26]=="Nein")? "":`,,,,,,,${(MData[count][69]=="Nein")?"":`DMC6: ${(MData[count][91]=="Nein")? "N":`${MData[count][93]}`}`},,${(MData[count][26]=="Ja")?`ID6: ${(MData[count][52]=="Ja")?`${MData[count][54]}`:"N"}`:""},,,\n`}${(MData[count][69]=="Nein" && MData[count][26]=="Nein")? "":`,,,,,,,${(MData[count][69]=="Nein")?"":`DMC7: ${(MData[count][95]=="Nein")? "N":`${MData[count][97]}`}`},,${(MData[count][26]=="Ja")?`ID7: ${(MData[count][56]=="Ja")?`${MData[count][58]}`:"N"}`:""},,,\n`}${(MData[count][69]=="Nein" && MData[count][26]=="Nein")? "":`,,,,,,,${(MData[count][69]=="Nein")?"":`DMC8: ${(MData[count][99]=="Nein")? "N":`${MData[count][101]}`}`},,${(MData[count][26]=="Ja")?`ID8: ${(MData[count][60]=="Ja")?`${MData[count][62]}`:"N"}`:""},,,\n`}${(MData[count][69]=="Nein" && MData[count][26]=="Nein")? "":`,,,,,,,${(MData[count][69]=="Nein")?"":`DMC9: ${(MData[count][103]=="Nein")? "N":`${MData[count][105]}`}`},,${(MData[count][26]=="Ja")?`ID9: ${(MData[count][64]=="Ja")?`${MData[count][66]}`:"N"}`:""},,,\n`}${(MData[count][69]=="Nein")? "":`,,,,,,,${(MData[count][69]=="Nein")?"":`DMC10: ${(MData[count][107]=="Nein")? "N":`${MData[count][109]}`}`},,,,,\n`}`;
 } 
