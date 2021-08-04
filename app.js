@@ -65,7 +65,7 @@ function MakeEmbed(value, pingValue){
           "title": `${value.name}`,
           "color": 11521782,
           "author": {
-            "name": "Help Requested for HMI by"
+            "name": "HMI Help Requested"
           },
           "fields": [
             {
