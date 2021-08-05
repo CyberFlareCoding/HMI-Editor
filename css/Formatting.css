@@ -92,6 +92,14 @@ body {
     border: 3px solid #009fe3;
   }
 
+#container2 {
+    padding: 10px;
+    margin-left: 5%;
+    background-color: white;
+    margin-right: 60%;
+    border: 3px solid #009fe3;
+  }
+
 #main {
     margin-left: 5%;
     border-style: solid;
