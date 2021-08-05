@@ -3,7 +3,7 @@ const app = express()
     app.use(express.urlencoded({extended: true})); 
     app.use(express.json());
 
-const { token } = require('/other/config.json');
+const { token } = process.env
 const Discord = require("discord.js");
 const Client = new Discord.Client();
 
