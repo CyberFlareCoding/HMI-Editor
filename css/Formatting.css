@@ -38,16 +38,12 @@
   }
 
 /* ----------------body/background------------------- **/
-html {
-  height: 100%;
-}
 
 body {
     background-image: url('img.png');
     background-size: cover;
     margin:0;
     padding:0;
-    min-height: 100%;
   }
 
 /* ---------------- sidebar ------------------- **/
