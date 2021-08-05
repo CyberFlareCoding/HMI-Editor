@@ -34,6 +34,19 @@
         </p>
       </div>
 </div>
+    <div id="container" style="margin-right: 50% !important">  
+      <form action="/submit" method="POST">
+            Name: <input type="text" name="name"> <br>
+            Your Contact: <input type="text" name="contact"> (An email or phone# will do) <br>
+               Type of Issue: <select name="Severity">
+                          <option value="0">File is coming out incorrectly / machine not working due to file</option>
+                          <option value="1">Usage Question</option>
+                          <option value="2">Other</option>
+                        </select> <br> 
+            Question: <input type="text" name="message"> <br>            
+                  <input type="submit" value="submit">        
+      </form>
+    </div>
       <footer onclick="THide(3)" id="foot">
         <h4>Information: (click to hide)</h4>
         <p>This is a program created by Joshua Greeff that takes the file exported from your machine (usually in the form of a txt file) and converts/translates it to an MS Excel document so you can edit it. After doing so, you have the option to also convert it back.</p>
