@@ -88,5 +88,5 @@ function MakeEmbed(value, pingValue){
 // server
 app.listen(port, function () {
     console.log("Server is running on port "+ port);
-    Client.login("ODcyNTcyNTU2MDY1MDA1NTk5.Y"+"Qr0hA.qosI_1CNbK-16BL-BE5WVU9ryUM")
+    Client.login(token)
 });
