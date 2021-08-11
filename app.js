@@ -7,7 +7,7 @@ const token = process.env.token
 const Discord = require("discord.js");
 const Client = new Discord.Client();
 
-const DicordChannel = "872545688121131105"
+const DiscordChannel = "872545688121131105"
 const port = process.env.PORT || 3000
 
 app.use(express.static(__dirname + "/css"));
@@ -55,7 +55,7 @@ app.post('/Submit', (req, res) => {
     value.message = value.message || "Blank"
 
     embed = MakeEmbed(value, pingValue)
-    Client.channels.cache.get(DicordChannel).send(embed)
+    Client.channels.cache.get(DiscordChannel).send(embed)
     res.redirect('/Contact')
 })
 
